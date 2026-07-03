@@ -2,7 +2,7 @@ const Order = require("../models/order.Model");
 const Product = require("../models/product.Model");
 const Category = require("../models/category.Model");
 const Brand = require("../models/brand.Model");
-const User = require("../models/user.Model");
+const User = require("../models/user.model");
 
 const getDashboardData = async (req, res) => {
   try {
