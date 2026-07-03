@@ -1,5 +1,5 @@
 const colorRouter = require("express").Router();
-const { create, read} = require("../controllers/color.Controller.js");
+const { create, read} = require("../controllers/color.controller.js");
 colorRouter.post("/create", create);
 colorRouter.get("/", read);
 

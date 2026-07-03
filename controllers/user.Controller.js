@@ -51,11 +51,14 @@ const login = async (req, res)=>{
             return sendBadRequest(res, "Wrong password")
         }
           const token = generateToken(userExist._id)
-        res.cookie('jwt',token, {
-    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in milliseconds
-    httpOnly: true,
-    secure: false,
-    sameSite: 'lax'
+    res.cookie("jwt", token, {
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite:
+    process.env.NODE_ENV === "production"
+      ? "none"
+      : "lax",
 });
         return sendSuccess(res, "User login successfully",{id: userExist._id, name: userExist.name, email: userExist.email});
 
