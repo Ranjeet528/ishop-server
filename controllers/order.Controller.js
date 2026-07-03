@@ -15,7 +15,7 @@ var instance = new Razorpay({
 const createOrder = async (req, res) => {
     try {
 
-        const { paymentMethod, address } = req.body;
+        const { paymentMethod, shippingAddress } = req.body;
         const userId = req.user._id;
         const userCart = await cartModel.findOne({ userId }).populate({
             path: "items.productId",
@@ -50,7 +50,7 @@ const createOrder = async (req, res) => {
         const order = await orderModel.create({
             user: userId,
             items: productDetail,
-            shippingAddress: address,
+            shippingAddress: shippingAddress,
             paymentMethod: paymentMethod,
             totalAmount: total_Amount,
             paymentStatus: "pending"
