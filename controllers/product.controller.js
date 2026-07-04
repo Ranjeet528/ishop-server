@@ -139,7 +139,7 @@ const read = async(req, res)=>{
             total,
             limit,
             pages: Math.ceil(total / limit),
-            imageBaseUrl:"http://localhost:5000/product"
+            imageBaseUrl:"https://ishop-server-3.onrender.com/product/"
         })        
     } catch (error) {
         return sendServerError(res)
@@ -211,7 +211,7 @@ const readById = async (req, res)=>{
       
         return sendSuccess(res, "product find", product, {
                
-                imageBaseUrl:"http://localhost:5000/product/"
+                imageBaseUrl:"https://ishop-server-3.onrender.com/product/"
             })
         
         

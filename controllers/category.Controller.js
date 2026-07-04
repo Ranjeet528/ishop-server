@@ -49,7 +49,7 @@ const read = async (req, res)=>{
         if(category){
             sendSuccess(res, "category find", category, {
                 total,
-                imageBaseUrl:"http://localhost:5000/category/"
+                imageBaseUrl:"https://ishop-server-3.onrender.com/category/"
             })
         }
         
@@ -67,7 +67,7 @@ const readById = async (req, res)=>{
       
         return sendSuccess(res, "category find", category, {
                
-                imageBaseUrl:"http://localhost:5000/category/"
+                imageBaseUrl:"https://ishop-server-3.onrender.com/category/"
             })
         
         

@@ -53,7 +53,7 @@ const read = async (req, res) => {
 
     return sendSuccess(res, "Brand found", brand, {
       total,
-      imageBaseUrl: "http://localhost:5000/brand/"
+      imageBaseUrl: "https://ishop-server-3.onrender.com/brand/"
     });
 
   } catch (error) {
